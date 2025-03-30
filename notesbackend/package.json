@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch index.js",
     "build:ui": "@powershell if (Test-Path ./dist) {Remove-Item -Recurse -Force ./dist} ; cd ~/part2-notes-frontend ; npm run build ; Copy-Item ./dist -Recurse ~/part3/notesbackend",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
+    "deploy:full": "npm run build:ui ; git add . ; git commit -m uibuild ; git push"
   },
   "dependencies": {
     "express": "^4.21.2",

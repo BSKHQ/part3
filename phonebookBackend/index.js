@@ -1,8 +1,7 @@
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-const cors = require('cors')
-app.use(cors())
+
 
 let phonebook = [
     {
@@ -114,6 +113,7 @@ function getRandomId() {
     return Math.floor(Math.random() * 50)
 }
 
-const PORT = 3001
-app.listen(PORT)
-console.log(`Server running on port ${PORT}`)
+const PORT = process.env.PORT || 3001
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
+})
