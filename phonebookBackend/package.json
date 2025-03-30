@@ -11,7 +11,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "build:ui": "@Powershell if (Test-Path ./dist) {Remove-Item -Recurse -Force ./dist} ; cd ~/part2/phonebook ; npm run build ; Copy-Item ./dist -Recurse ~/part3/phonebookBackend",
-    "deploy:full": "git add . && git commit -m uibuild && git push "
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push "
   },
   "dependencies": {
     "cors": "^2.8.5",
